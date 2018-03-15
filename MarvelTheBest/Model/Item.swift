@@ -1,0 +1,19 @@
+//
+//  Item.swift
+//  MarvelTheBest
+//
+//  Created by 范舟弛 on 2018/3/15.
+//  Copyright © 2018年 范舟弛. All rights reserved.
+//
+
+import Foundation
+
+extension API {
+    struct CommonItem: Model {
+        var id: Int
+        var title: String?
+        var description: String?
+        var thumbnail: Image? = nil
+        var resourceURI: String?
+    }
+}
