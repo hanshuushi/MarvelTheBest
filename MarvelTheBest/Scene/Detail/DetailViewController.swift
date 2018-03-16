@@ -166,22 +166,6 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section != 1 {
-            return
-        }
-        
-        switch status {
-        case .success(let viewModels):
-            if indexPath.row < viewModels.count,
-                let url = viewModels[indexPath.row].openURLString.flatMap({ URL(string: $0) }) {
-                UIApplication.shared.openURL(url)
-            }
-        default:
-            return
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -228,6 +212,10 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return 60
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        infoTableViewCell.observerContentOffsetY(scrollView.contentOffset.y)
     }
 }
 

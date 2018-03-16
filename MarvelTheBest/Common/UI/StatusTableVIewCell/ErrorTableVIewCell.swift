@@ -35,8 +35,10 @@ class ErrorTableViewCell: UITableViewCell {
         self.contentView.addSubview(stackView)
         
         self.backgroundColor = .clear
+        self.selectionStyle = .none
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         self.contentView.addConstraints([NSLayoutConstraint(item: stackView,
                                                             attribute: .centerX,
                                                             relatedBy: .equal,

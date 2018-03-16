@@ -15,13 +15,33 @@ class HeroInfoTableViewCell: UITableViewCell, ImageLoader {
     
     let heroImageBackgroudView: UIImageView
     
-    let gradientLayer: CAGradientLayer
-    
     var dataTast: URLSessionDataTask? = nil
     
     let favButton: UIButton
     
     let triangleImage: UIImageView
+    
+    let gradientImageView: UIImageView
+    
+    func observerContentOffsetY(_ contentOffsetY: CGFloat) {
+        if contentOffsetY >= 0 {
+            heroImageBackgroudView.frame = CGRect(x: 0,
+                                                  y: 0,
+                                                  width: 392 * 163 / 83,
+                                                  height: 392)
+            heroImageBackgroudView.center.x = self.contentView.bounds.midX
+        } else {
+            let height = 392 - contentOffsetY
+            
+            heroImageBackgroudView.frame = CGRect(x: 0,
+                                                  y: 392 - height,
+                                                  width: height * 163 / 83,
+                                                  height: height)
+            
+            
+            heroImageBackgroudView.center.x = self.contentView.bounds.midX
+        }
+    }
     
     static func triangleImage(of size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)
@@ -68,6 +88,41 @@ class HeroInfoTableViewCell: UITableViewCell, ImageLoader {
         }
     }
     
+    static func gradientImage() -> UIImage? {
+        UIGraphicsBeginImageContext(CGSize(width: 2.0, height: 100))
+        
+        guard let ctx = UIGraphicsGetCurrentContext() else {
+            UIGraphicsEndImageContext()
+            
+            return nil
+        }
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let array = [UIColor.black.withAlphaComponent(0), UIColor.black].map({ $0.cgColor }) as CFArray
+        
+        guard let gradient = CGGradient(colorsSpace: colorSpace,
+                                        colors: array,
+                                        locations: [0.0, 1.0]) else {
+                                            UIGraphicsEndImageContext()
+                                            
+                                            return nil
+        }
+        
+        ctx.drawLinearGradient(gradient,
+                               start: CGPoint(x: 1.0,
+                                              y: 0.0),
+                               end: CGPoint(x: 1.0,
+                                            y: 100.0),
+                               options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         heroNameLabel = UILabel()
         heroNameLabel.font = ViewFactory.condensedBold(of: 36)
@@ -81,13 +136,13 @@ class HeroInfoTableViewCell: UITableViewCell, ImageLoader {
         heroImageBackgroudView = UIImageView()
         heroImageBackgroudView.contentMode = .scaleAspectFill
         heroImageBackgroudView.clipsToBounds = true
+        heroImageBackgroudView.frame = CGRect(x: 0,
+                                              y: 0,
+                                              width: 392 * 163 / 83,
+                                              height: 392)
+        heroImageBackgroudView.center.x = UIScreen.main.bounds.midX
         
-        gradientLayer = CAGradientLayer()
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
-        gradientLayer.colors = [UIColor.black.withAlphaComponent(0.0).cgColor, UIColor.black.withAlphaComponent(1.0).cgColor]
-        
-        heroImageBackgroudView.layer.addSublayer(gradientLayer)
+        gradientImageView = UIImageView(image: HeroInfoTableViewCell.gradientImage())
         
         triangleImage = UIImageView()
         
@@ -105,6 +160,7 @@ class HeroInfoTableViewCell: UITableViewCell, ImageLoader {
         self.backgroundColor = UIColor.black
         
         self.contentView.addSubview(heroImageBackgroudView)
+        self.contentView.addSubview(gradientImageView)
         self.contentView.addSubview(heroNameLabel)
         self.contentView.addSubview(heroDescLabel)
         self.contentView.addSubview(triangleImage)
@@ -153,13 +209,11 @@ class HeroInfoTableViewCell: UITableViewCell, ImageLoader {
         heroDescLabel.frame.origin = CGPoint(x: 25, y: 357)
         heroDescLabel.frame.size = heroDescLabel.sizeThatFits(CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude))
         
-        heroImageBackgroudView.frame = CGRect(x: 0,
-                                              y: 0,
-                                              width: 392 * 163 / 83,
-                                              height: 392)
-        heroImageBackgroudView.center.x = self.contentView.bounds.midX
         
-        gradientLayer.frame = CGRect(x: 0, y: heroImageBackgroudView.bounds.height - 100, width: heroImageBackgroudView.bounds.width, height: 100)
+        gradientImageView.frame = CGRect(x: 0,
+                                         y: 292,
+                                         width: self.contentView.bounds.width,
+                                         height: 100)
         
         triangleImage.frame = CGRect(x: 0,
                                      y: self.contentView.bounds.height - 58,

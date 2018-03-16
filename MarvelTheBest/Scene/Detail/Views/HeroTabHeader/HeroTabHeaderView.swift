@@ -12,11 +12,7 @@ class HeroTabHeader: UITableViewHeaderFooterView {
     
     let stackView: UIStackView
     
-    var tabIndex: Int = 0 {
-        didSet {
-            tabIndexChanged?(tabIndex)
-        }
-    }
+    var tabIndex: Int = 0 
     
     var tabIndexChanged: ((Int) -> Void)? {
         didSet {
@@ -62,8 +58,15 @@ class HeroTabHeader: UITableViewHeaderFooterView {
         UIView.animate(withDuration: 0.25) {
             self.tabIndex = sender.tag
             
-            self.setNeedsLayout()
-            self.layoutIfNeeded()
+        }
+        
+        UIView
+            .animate(withDuration: 0.125,
+                     animations: {
+                        self.setNeedsLayout()
+                        self.layoutIfNeeded()
+            }) { (_) in
+                self.tabIndexChanged?(self.tabIndex)
         }
     }
     

@@ -204,12 +204,11 @@ extension HomeViewController {
         UIView
             .animate(withDuration: 0.25,
                      animations: {
-                        self.marvelImageView.alpha = 0.0
+                        self.searchTextField.alpha = 0.0
                         
                         self.searchButton.center.y = self.marvelImageView.center.y
                         self.searchButton.frame.origin.x = self.navigationView.bounds.width - self.searchButton.bounds.width
             }) { (_) in
-                self.searchTextField.alpha = 0.0
                 
                 self.marvelImageView.isHidden = false
                 self.marvelImageView.alpha = 0.0
