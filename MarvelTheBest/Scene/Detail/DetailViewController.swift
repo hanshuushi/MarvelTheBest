@@ -73,6 +73,9 @@ class DetailViewController: UIViewController {
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
+        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, UIConfigBottomMargin, 0)
+        tableView.scrollIndicatorInsets = tableView.contentInset
         tableView.register(LoadingTableViewCell.self,
                            forCellReuseIdentifier: "Loading")
         tableView.register(EmptyTableVIewCell.self,
@@ -95,7 +98,7 @@ class DetailViewController: UIViewController {
         
         self.view.addSubview(popButton)
         
-        popButton.frame = CGRect(x: 26, y: 34, width: 29, height: 29)
+        popButton.frame = CGRect(x: 26, y: 34 + UIConfigTopOffset, width: 29, height: 29)
         popButton.setImage(UIImage(named: "back"), for: .normal)
         popButton.addTarget(self,
                             action: #selector(DetailViewController.popButtonPressed),

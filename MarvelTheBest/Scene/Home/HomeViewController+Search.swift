@@ -38,7 +38,7 @@ extension HomeViewController: UITextFieldDelegate {
 extension HomeViewController {
     
     static func customNavigationBackgroudImage() -> UIImage? {
-        UIGraphicsBeginImageContext(CGSize(width: 2.0, height: 104))
+        UIGraphicsBeginImageContext(CGSize(width: 2.0, height: 104 + UIConfigTopOffset))
         
         guard let ctx = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
@@ -52,7 +52,7 @@ extension HomeViewController {
         
         guard let gradient = CGGradient(colorsSpace: colorSpace,
                                   colors: array,
-                                  locations: [0.0, 0.6538, 1.0]) else {
+                                  locations: [0.0, (68 + UIConfigTopOffset) / (104 + UIConfigTopOffset), 1.0]) else {
                                     UIGraphicsEndImageContext()
                                     
                                     return nil
@@ -62,7 +62,7 @@ extension HomeViewController {
                                start: CGPoint(x: 1.0,
                                               y: 0.0),
                                end: CGPoint(x: 1.0,
-                                            y: 104.0),
+                                            y: 104.0 + UIConfigTopOffset),
                                options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -131,8 +131,8 @@ extension HomeViewController {
                                        for: .normal)
         
         marvelImageView.sizeToFit()
-        marvelImageView.center = CGPoint(x: navigationView.center.x,
-                                         y: navigationView.center.y + 10)
+        marvelImageView.frame.origin.y = 33  + UIConfigTopOffset
+        marvelImageView.center.x = navigationView.center.x
         
         searchTextField.rightViewMode = .always
         searchTextField.rightView = rightButton
@@ -180,7 +180,7 @@ extension HomeViewController {
                      animations: {
                         self.marvelImageView.alpha = 0.0
                         
-                        self.searchButton.center = CGPoint(x: 35, y: 48)
+                        self.searchButton.center = CGPoint(x: 35, y: 48 + UIConfigTopOffset)
             }) { (_) in
                 self.marvelImageView.isHidden = true
                 self.marvelImageView.alpha = 1.0

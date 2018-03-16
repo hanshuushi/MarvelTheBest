@@ -51,13 +51,13 @@ class HomeViewController: UIViewController {
         viewModel = HomeViewModel()
         
         navigationView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width,
-                                              height: 77))
+                                              height: 77 + UIConfigTopOffset))
         
         searchButton = UIButton()
         
         marvelImageView = UIImageView(image: UIImage(named: "marvel"))
         
-        searchTextField = UITextField(frame: CGRect(x: 26, y: 28, width: UIScreen.main.bounds.width - 26, height: 42))
+        searchTextField = UITextField(frame: CGRect(x: 26, y: 28 + UIConfigTopOffset, width: UIScreen.main.bounds.width - 26, height: 42))
         
         maskView = UIView()
         
@@ -85,7 +85,7 @@ class HomeViewController: UIViewController {
         }
         
         /// setup tableview
-        tableView.contentInset = UIEdgeInsetsMake(77, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(77 + UIConfigTopOffset, 0, UIConfigBottomMargin, 0)
         tableView.scrollIndicatorInsets = tableView.contentInset
         tableView.register(LoadingTableViewCell.self,
                            forCellReuseIdentifier: "Loading")
