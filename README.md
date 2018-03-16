@@ -1,7 +1,16 @@
-#MarvelTheBest
 ![](https://github.com/hanshuushi/MarvelTheBest/blob/master/MarvelTheBest/Common/AppRefer/AppRefer.xcassets/AppIcon.appiconset/180.png?raw=true)
 
+#MarvelTheBest
+
 MarvelTheBest is  my personal practicing iOS project. Without using any third party libraries, I accomplished the development of the whole project in few days, and all the datas come from Marvel API.
+
+
+![](https://github.com/hanshuushi/MarvelTheBest/blob/master/screen1.png?raw=true)
+
+![](https://github.com/hanshuushi/MarvelTheBest/blob/master/screen2.png?raw=true)
+
+![](https://github.com/hanshuushi/MarvelTheBest/blob/master/screen3.png?raw=true)
+
 
 ## Features
 1. Display the list of Marvel Super Heroes.
