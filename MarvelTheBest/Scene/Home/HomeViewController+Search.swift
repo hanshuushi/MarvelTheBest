@@ -36,6 +36,42 @@ extension HomeViewController: UITextFieldDelegate {
 }
 
 extension HomeViewController {
+    
+    static func customNavigationBackgroudImage() -> UIImage? {
+        UIGraphicsBeginImageContext(CGSize(width: 2.0, height: 104))
+        
+        guard let ctx = UIGraphicsGetCurrentContext() else {
+            UIGraphicsEndImageContext()
+            
+            return nil
+        }
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let array = [UIColor.black, UIColor.black, UIColor.black.withAlphaComponent(0)].map({ $0.cgColor }) as CFArray
+        
+        guard let gradient = CGGradient(colorsSpace: colorSpace,
+                                  colors: array,
+                                  locations: [0.0, 0.6538, 1.0]) else {
+                                    UIGraphicsEndImageContext()
+                                    
+                                    return nil
+        }
+        
+        ctx.drawLinearGradient(gradient,
+                               start: CGPoint(x: 1.0,
+                                              y: 0.0),
+                               end: CGPoint(x: 1.0,
+                                            y: 104.0),
+                               options: [.drawsBeforeStartLocation, .drawsAfterEndLocation])
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
     @objc func textFieldValueChanged(sender: UITextField) {
 //        let text = sender.text ?? ""
         
@@ -50,6 +86,12 @@ extension HomeViewController {
         self.view.addSubview(navigationView)
         
         navigationView.backgroundColor = UIColor.black
+        
+        let navigationImageView = UIImageView(image: HomeViewController.customNavigationBackgroudImage())
+        
+        navigationView.addSubview(navigationImageView)
+        
+        navigationImageView.frame.size.width = navigationView.frame.size.width
         
         navigationView.addSubview(marvelImageView)
         
