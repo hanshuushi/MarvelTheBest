@@ -37,12 +37,12 @@ extension HomeViewController: UITextFieldDelegate {
 
 extension HomeViewController {
     @objc func textFieldValueChanged(sender: UITextField) {
-        let text = sender.text ?? ""
+//        let text = sender.text ?? ""
         
-        rightButton.setAttributedTitle(NSAttributedString(string: text == "" ? "Cancel" : "Search",
-                                                          attributes: [NSAttributedStringKey.font: ViewFactory.condensedBold(of: 15),
-                                                                       NSAttributedStringKey.foregroundColor: UIColor.white]),
-                                       for: .normal)
+//        rightButton.setAttributedTitle(NSAttributedString(string: text == "" ? "Cancel" : "Search",
+//                                                          attributes: [NSAttributedStringKey.font: ViewFactory.condensedBold(of: 15),
+//                                                                       NSAttributedStringKey.foregroundColor: UIColor.white]),
+//                                       for: .normal)
     }
     
     func viewDidLoadSearch() {
@@ -119,15 +119,15 @@ extension HomeViewController {
     }
     
     @objc func rightButtonPressed(sender: UIButton) {
-        if (searchTextField.text ?? "") == "" {
-            searchTextField.resignFirstResponder()
-            
-            hideSearch()
-            
-            return
-        }
+//        if (searchTextField.text ?? "") == "" {
+        searchTextField.resignFirstResponder()
         
-        searchAction?(searchTextField.text ?? "")
+        hideSearch()
+        
+//        return
+//        }
+        
+//        searchAction?(searchTextField.text ?? "")
     }
     
     @objc func showSearch() {

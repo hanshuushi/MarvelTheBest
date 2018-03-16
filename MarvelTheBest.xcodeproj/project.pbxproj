@@ -20,7 +20,6 @@
 		8E038D3C205A786B005E0DE6 /* HomeViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E038D3B205A786B005E0DE6 /* HomeViewController+Search.swift */; };
 		8E038D3E205A8873005E0DE6 /* ErrorTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E038D3D205A8873005E0DE6 /* ErrorTableVIewCell.swift */; };
 		8E038D40205A8CA9005E0DE6 /* EmptyTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E038D3F205A8CA9005E0DE6 /* EmptyTableVIewCell.swift */; };
-		8EB434B22056AC1A00E8485D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EB434AE2056AC1A00E8485D /* LaunchScreen.storyboard */; };
 		8EB434B32056AC1A00E8485D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB434AF2056AC1A00E8485D /* AppDelegate.swift */; };
 		8EB434B42056AC1A00E8485D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8EB434B02056AC1A00E8485D /* Info.plist */; };
 		8EB434BA2056B4F800E8485D /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB434B92056B4F800E8485D /* HttpRequest.swift */; };
@@ -44,8 +43,8 @@
 		8EE60FB620596A8C0089A69C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE60FB520596A8C0089A69C /* HomeViewModel.swift */; };
 		8EE60FB920596CDC0089A69C /* LatteTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE60FB820596CDC0089A69C /* LatteTime.swift */; };
 		8EE60FBC20596D9E0089A69C /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE60FBB20596D9E0089A69C /* LoadingTableViewCell.swift */; };
+		8EF39334205B5BDE009203ED /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF39333205B5BDE009203ED /* Launch Screen.storyboard */; };
 		8EF8A028205A1B2000027685 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF8A027205A1B2000027685 /* ViewFactory.swift */; };
-		8EF8A02A205A1C2900027685 /* Test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF8A029205A1C2900027685 /* Test.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		8E038D3D205A8873005E0DE6 /* ErrorTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTableVIewCell.swift; sourceTree = "<group>"; };
 		8E038D3F205A8CA9005E0DE6 /* EmptyTableVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableVIewCell.swift; sourceTree = "<group>"; };
 		8E8D5EFB20564DAF004E039E /* MarvelTheBest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelTheBest.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EB434AE2056AC1A00E8485D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EB434AF2056AC1A00E8485D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EB434B02056AC1A00E8485D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB434B92056B4F800E8485D /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
@@ -89,8 +87,8 @@
 		8EE60FB520596A8C0089A69C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8EE60FB820596CDC0089A69C /* LatteTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatteTime.swift; sourceTree = "<group>"; };
 		8EE60FBB20596D9E0089A69C /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
+		8EF39333205B5BDE009203ED /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8EF8A027205A1B2000027685 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
-		8EF8A029205A1C2900027685 /* Test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Test.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,9 +204,8 @@
 		8EB434AD2056AC1A00E8485D /* AppRefer */ = {
 			isa = PBXGroup;
 			children = (
-				8EB434AE2056AC1A00E8485D /* LaunchScreen.storyboard */,
-				8EF8A029205A1C2900027685 /* Test.xib */,
 				8EB434AF2056AC1A00E8485D /* AppDelegate.swift */,
+				8EF39333205B5BDE009203ED /* Launch Screen.storyboard */,
 				8EB434B02056AC1A00E8485D /* Info.plist */,
 				8EB434C12056CEA700E8485D /* MarvelTheBest-Bridging-Header.h */,
 				8EE60FA420591F290089A69C /* AppRefer.xcassets */,
@@ -421,10 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EE60F9F20591E1A0089A69C /* Resources.xcassets in Resources */,
-				8EF8A02A205A1C2900027685 /* Test.xib in Resources */,
 				8EB434B42056AC1A00E8485D /* Info.plist in Resources */,
+				8EF39334205B5BDE009203ED /* Launch Screen.storyboard in Resources */,
 				8EE60FA520591F2A0089A69C /* AppRefer.xcassets in Resources */,
-				8EB434B22056AC1A00E8485D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +593,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "MarvelTheBest/Common/AppRefer/MarvelTheBest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -615,7 +611,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MarvelTheBest/Common/AppRefer/MarvelTheBest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
